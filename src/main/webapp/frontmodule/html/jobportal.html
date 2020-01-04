@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/layui.css" media="all">
+</head>
+<style>
+    .layui-form-label {
+        color: #0C0C0C;
+        width: 60px;
+    }
+
+    .main {
+        text-align: center;
+        margin-top: 15%;
+    }
+</style>
+<body>
+<div class="layui-card">
+    <div class="layui-card-header layui-bg-gray"><i class="layui-icon">&#xe61a;</i>&nbsp;展示任务列表</div>
+    <div class="layui-card-body">
+        <div class="layui-form layui-form-pane">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">系统选择</label>
+                    <div class="layui-input-inline">
+                        <select name="type" id="search_type" lay-filter="type">
+                            <option value="">选择系统</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">上传文件</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="file_text" placeholder="文件名称" disabled=""/>
+                    </div>
+                    <button type="button" class="layui-btn layui-btn-normal" id="choose_btn">选择文件</button>
+                    <button class="layui-btn" id="upload_btn"><i class="layui-icon">&#xe67c;</i>上传</button>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" id="deploy_btn"><i class="layui-icon">&#xe609;</i>全部部署</button>
+                    <button class="layui-btn" id="refresh_btn"><i class="layui-icon">&#xe9aa;</i>刷新状态</button>
+                    <button class="layui-btn" id="init_btn"><i class="layui-icon">&#xe628;</i>初始化Job</button>
+                    <button class="layui-btn" id="delete_btn"><i class="layui-icon">&#xe640;</i>删除Job</button>
+                </div>
+                <div class="layui-inline layui-layout-right">
+                    <label class="layui-form-label" id="job_count">任务数:0个</label>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space30" id="list-content">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../layui.js" charset="UTF-8"></script>
+<script src="jobportal.js" charset="UTF-8"></script>
+</body>
+</html>

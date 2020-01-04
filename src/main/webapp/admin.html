@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>自动部署管理系统</title>
+    <link rel="stylesheet" href="frontmodule/css/layui.css">
+</head>
+<style>
+
+    .layui-side-scroll{
+        background: #001529;
+    }
+
+    #menu-list .active {
+        background: #4958ab;
+        color: #fff;
+    }
+    .layui-layout-admin .layui-header{
+        background: #4958ab;
+    }
+
+    .layui-layout-admin .layui-logo{
+        font-size: 18px;
+        font-weight: bold;
+        color: #eee;
+    }
+
+    .layui-nav-child dd{
+        background: #000c17;
+    }
+
+    .layui-nav-itemed>a{
+        background: #001529;
+    }
+    .layui-nav-tree .layui-nav-child a{
+        color: #eee;
+    }
+</style>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo">自动部署管理系统</div>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">系统运行监控</a>
+                    <dl class="layui-nav-child" id="menu-list">
+                        <dd class="active"><a href="frontmodule/html/jobportal.html" target="body">展示任务列表</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <iframe id="body" name="body" style="overflow:visible" scrolling="yes" frameborder="no" width="100%" height="100%"></iframe>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        @csnt.com - 中远海科
+    </div>
+</div>
+<!--<script src="frontmodule/layui.js"></script>
+<script src="frontmodule/lay/modules/jquery.js"></script>-->
+<script>
+    //JavaScript代码区域
+    /*layui.use('element', function(){
+        var element = layui.element;
+
+    });*/
+    function removeActiveClass(node) {
+        node.className = '';
+    }
+    window.onload = function () {
+        var menuList = document.getElementById('menu-list');
+        menuList.onclick = function (ev) {
+            var target = ev.target;
+            var nodeName = target.nodeName.toLowerCase();
+            Array.prototype.forEach.call(document.querySelectorAll('#menu-list dd'), removeActiveClass);
+            if(nodeName==='dd'){
+                target.classList.add('active')
+            }else if(nodeName==='a'){
+                target.parentNode.classList.add('active')
+            }
+        }
+    }
+</script>
+</body>
+</html>
