@@ -1,9 +1,9 @@
 -- 自动部署系统配置表
 DROP TABLE IF EXISTS `tbl_paramSystemConfig`;
 CREATE TABLE `tbl_paramSystemConfig` (
- ip varchar(15) not null comment '收费站ip地址',
- stationCode varchar(14) not null comment '收费站编码',
- stationName varchar(50) not null comment '收费站名称',
+ ip varchar(15) not null comment 'ip地址',
+ stationCode varchar(14) not null comment '编码',
+ stationName varchar(50) not null comment '名称',
  systemCode varchar(50) not null comment '系统编码',
  systemName varchar(100) not null comment '系统名称',
  configContext text not null comment 'json格式的配置内容',
@@ -29,7 +29,4 @@ ROW_FORMAT=COMPACT;
 --  configContext.contextPath 服务部署后在tomcat中的应用名
 --  configContext.war 需要部署应用的war名字
 -- =================================
-INSERT INTO `tbl_paramsystemconfig` (`ip`, `stationCode`, `stationName`, `systemCode`, `systemName`, `configContext`, `isActive`, `issueFlag`, `createTime`, `updateTime`, `backup1`, `backup2`, `backup3`, `backup4`, `backup5`)
-VALUES ('10.63.1.125', '6300104', '乐都站', 'smServer', '部站服务端', '{"port":35000,"credentialsId":"tomcatUser","contextPath":"/smServer","war":"smServer.war"}', '1', '1', '2019-12-05 14:26:50', '2019-12-05 14:27:01', NULL, NULL, NULL, NULL, '1');
-INSERT INTO `tbl_paramsystemconfig` (`ip`, `stationCode`, `stationName`, `systemCode`, `systemName`, `configContext`, `isActive`, `issueFlag`, `createTime`, `updateTime`, `backup1`, `backup2`, `backup3`, `backup4`, `backup5`)
-VALUES ('10.63.1.28', '6300101', '马场垣主线站', 'smServer', '部站服务端', '{"port":35000,"credentialsId":"tomcatUser","contextPath":"/smServer","war":"smServer.war"}', '0', '1', '2019-12-05 14:26:50', '2019-12-05 14:27:01', NULL, NULL, NULL, NULL, '1');
+
