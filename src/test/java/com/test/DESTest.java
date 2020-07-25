@@ -13,7 +13,7 @@ import com.csnt.deploy.util.EncryptUtil;
 public class DESTest {
 
     public static void main(String[] args) {
-        String password = "11f30b61fa30a0c9f0e60f8178086383d1";
+        String password = "";
         try {
             String encryptword = EncryptUtil.encrypt(password);
             System.out.println(encryptword);
