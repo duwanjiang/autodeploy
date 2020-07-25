@@ -16,7 +16,7 @@ b)	在项目中的$TOMCAT_HOME/ tomcat-users.xml配置tomcat账户密码，添�
 <role rolename="manager-script"/>
 <role rolename="manager-jmx"/>
 <role rolename="manager-status"/>
-<user username="cstd" password="Csnt5885!" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+<user username="..." password="..." roles="manager-gui,manager-script,manager-jmx,manager-status"/>
  
 2.	Jenkins部署
 2.1.	下载Jenkins
@@ -28,7 +28,7 @@ b)	在项目中的$TOMCAT_HOME/ tomcat-users.xml配置tomcat账户密码，添�
 例如在linux上的配置如下：
 打开/etc/profile文件，在最后增加如下代码：
 
-JENKINS_HOME=/cstc/application/jenkins/program
+JENKINS_HOME=/.../jenkins/program
 export JENKINS_HOME
 
 2.3.2.	启动Jenkins
@@ -65,10 +65,9 @@ java -jar $JENKINS_ROOT/jenkins.war --httpPort=8888
  
 3.	自动部署程序配置
 3.1.	创建配置表
-在across_province2.0项目中的 across-province2.0\4.script\sql\autodeploy目录，执行创建表脚本
+在项目中的 script\sql\autodeploy目录，执行创建表脚本
  
 3.2.	初始化配置数据
-需要参考我代码中提供的样例语句进行修改
  
 注意：
 --  configContext.port 应用的端口
