@@ -11,13 +11,15 @@ a)	项目中的$TOMCAT_HOME/webapps/manager/META-INF/context.xml中需要修改�
 在Value节点中增加需要远程访问的服务器IP或者将Value节点注释掉
  
 b)	在项目中的$TOMCAT_HOME/ tomcat-users.xml配置tomcat账户密码，添加如下代码：
+```xml
 <!-- 注意  这里Jenkins自动部署的角色配置如下 -->
 <role rolename="manager-gui"/>
 <role rolename="manager-script"/>
 <role rolename="manager-jmx"/>
 <role rolename="manager-status"/>
 <user username="..." password="..." roles="manager-gui,manager-script,manager-jmx,manager-status"/>
- 
+``` 
+
 2.	Jenkins部署
 2.1.	下载Jenkins
 直接在Jenkins的 war包版本即可，也可以直接使用提供的jenkins.war
@@ -65,7 +67,7 @@ java -jar $JENKINS_ROOT/jenkins.war --httpPort=8888
  
 3.	自动部署程序配置
 3.1.	创建配置表
-在项目中的 script\sql\autodeploy目录，执行创建表脚本
+在项目中的 script\sql目录，执行创建表脚本
  
 3.2.	初始化配置数据
  
