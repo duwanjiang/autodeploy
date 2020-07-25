@@ -18,9 +18,9 @@ CREATE TABLE tbl_paramSystemConfig (
  primary key (ip,systemCode)
 );
 
-comment on column tbl_paramSystemConfig.ip is '收费站ip地址';
-comment on column tbl_paramSystemConfig.stationCode is '收费站编码';
-comment on column tbl_paramSystemConfig.stationName is '收费站名称';
+comment on column tbl_paramSystemConfig.ip is 'ip地址';
+comment on column tbl_paramSystemConfig.stationCode is '编码';
+comment on column tbl_paramSystemConfig.stationName is '名称';
 comment on column tbl_paramSystemConfig.systemCode is '系统编码';
 comment on column tbl_paramSystemConfig.systemName is '系统名称';
 comment on column tbl_paramSystemConfig.configContext is 'json格式的配置内容';
@@ -42,7 +42,3 @@ comment on column tbl_paramSystemConfig.backup5 is '备份5';
 --  configContext.contextPath 服务部署后在tomcat中的应用名
 --  configContext.war 需要部署应用的war名字
 -- =================================
-INSERT INTO tbl_paramsystemconfig (ip, stationCode, stationName, systemCode, systemName, configContext, isActive, issueFlag, createTime, updateTime, backup1, backup2, backup3, backup4, backup5)
-VALUES ('10.63.1.125', '6300104', '乐都站', 'smServer', '部站服务端', '{"port":35000,"credentialsId":"tomcatUser","contextPath":"/smServer","war":"smServer.war"}', '1', '1', TO_DATE('2020-01-04 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), TO_DATE('2020-01-04 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), NULL, NULL, NULL, NULL, '1');
-INSERT INTO tbl_paramsystemconfig (ip, stationCode, stationName, systemCode, systemName, configContext, isActive, issueFlag, createTime, updateTime, backup1, backup2, backup3, backup4, backup5)
-VALUES ('10.63.1.28', '6300101', '马场垣主线站', 'smServer', '部站服务端', '{"port":35000,"credentialsId":"tomcatUser","contextPath":"/smServer","war":"smServer.war"}', '0', '1', TO_DATE('2020-01-04 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), TO_DATE('2020-01-04 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), NULL, NULL, NULL, NULL, '1');
